@@ -1,0 +1,43 @@
+<?php
+
+use App\Http\Controllers\localizationController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+
+Route::get('/', function () {
+    return view('pages.home');
+});
+
+Route::get('/about', function () {
+    return view('pages.about');
+});
+
+Route::get('/service', function () {
+    return view('pages.service');
+});
+
+Route::get('/menu', function () {
+    return view('pages.menu');
+});
+
+
+
+Route::get('/testimonial', function () {
+    return view('pages.testimonial');
+});
+
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+Route::get('/locale/{lang}',[localizationController::class, 'setLang']);
